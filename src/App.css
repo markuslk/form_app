@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove default margin */
+
+* {
+	margin: 0;
+
+	padding: 0;
+
+	font: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Set core root defaults */
+
+html:focus-within {
+	scroll-behavior: smooth;
 }
 
-.App-link {
-  color: #61dafb;
+html,
+body {
+	height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Set core body defaults */
+
+body {
+	text-rendering: optimizeSpeed;
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img,
+picture {
+	max-width: 100%;
+
+	display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+
+		animation-iteration-count: 1 !important;
+
+		transition-duration: 0.01ms !important;
+
+		scroll-behavior: auto !important;
+	}
+}
+
+.container {
+	max-width: 60rem;
+	margin-inline: auto;
+}
+
+.form-container {
+	background-color: #083d77;
+	color: #f4d35e;
+	max-width: 70%;
+	margin-inline: auto;
+	text-align: center;
+	padding: 5rem;
+	border-radius: 20px;
+}
+
+.register-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-inline: auto;
+	gap: 1rem;
+}
+
+.form-field {
+	width: 20rem;
+	height: 3rem;
+	border: none;
+	border-radius: 5px;
+	padding-inline: 0.5rem;
+}
+
+.form-field:focus-within {
+	outline: 2px solid #01baef;
+}
+
+.btn {
+	background-color: #f4d35e;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #f2cb3e;
 }
